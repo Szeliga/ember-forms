@@ -2,7 +2,7 @@
     {{#if label}}
         {{#if yieldInLabel}}
             {{#if labelWrapperClass}}
-                <div {{bind-attr class=labelWrapperClass}}>
+                <div class={{labelWrapperClass}}>
                     {{partial 'components/formgroup/control-within-label'}}
                 </div>
             {{else}}
@@ -10,7 +10,7 @@
             {{/if}}
         {{else}}
             {{#if labelWrapperClass}}
-                <div {{bind-attr class=labelWrapperClass}}>
+                <div class={{labelWrapperClass}}>
                     {{em-form-label text=label viewName=labelViewName}}
                     {{partial 'components/formgroup/form-group-control'}}
                 </div>
@@ -24,7 +24,7 @@
     {{/if}}
 
     {{#if v_icons}}
-        <span class="form-control-feedback"><i {{bind-attr class=v_icon}}></i></span>
+        <span class="form-control-feedback"><i class={{v_icon}}></i></span>
     {{/if}}
 
     {{!Currently no errors when layout is inline}}

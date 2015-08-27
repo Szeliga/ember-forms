@@ -9,7 +9,7 @@ It is possible to have a custom submit button by not rendering the default submi
     <pre><code class="handlebars">
         \{{#em-form model=model submit_button=false}}
         &lt;div class="form-actions"&gt;
-            &lt;input \{{bind-attr disabled=isntValid}} type="submit" class="btn btn-primary" value="Login"&gt;
+            &lt;input \disabled={{isntValid}} type="submit" class="btn btn-primary" value="Login"&gt;
         &lt;/div&gt;
         \{{/em-form}}
     </code></pre>
@@ -59,7 +59,7 @@ Few things happen here:
         {{em-input label="Name" property="user"}}
         {{em-input label="Password" property="password"}}
         <div class="form-actions">
-            <input {{bind-attr disabled=isntValid}} type="submit" class="btn btn-primary" value="Login">
+            <input disabled={{isntValid}} type="submit" class="btn btn-primary" value="Login">
         </div>
     {{/em-form}}
 </div>
