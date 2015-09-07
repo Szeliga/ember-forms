@@ -19,7 +19,6 @@ export default FormGroupComponent.extend({
     model: Em.computed.alias('parentView.model'),
     propertyName: Em.computed.alias('parentView.propertyName')
   }),
-  addonIcon: false,
   property: void 0,
   label: void 0,
   placeholder: void 0,
