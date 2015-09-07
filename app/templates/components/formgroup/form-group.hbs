@@ -12,9 +12,6 @@
             {{#if labelWrapperClass}}
                 <div class="{{labelWrapperClass}}">
                     {{em-form-label text=label viewName=labelViewName}}
-                    {{#if addonIcon}}
-                      <span class="input-group-addon"><i class="fa fa-{{addonIcon}}"></i></span>
-                    {{/if}}
                     {{partial 'components/formgroup/form-group-control'}}
                 </div>
             {{else}}
