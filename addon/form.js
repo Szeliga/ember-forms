@@ -60,12 +60,12 @@ export default Em.Component.extend({
     } else {
       return this.get('model').validate()
         .then(function() {
-          if (_this.get('model.isValid')) {
-            _this.get('targetObject').send(_this.get('action'));
-          }
+          _this.get('targetObject').send(_this.get('action'));
         })
         .catch(function() {
-          _this.get('targetObject').send(_this.get('errorAction'));
+          if (_this.get('errorAction')) {
+            _this.get('targetObject').send(_this.get('errorAction'));
+          }
         });
     }
   }
