@@ -46,25 +46,22 @@ export default Em.Component.extend({
 
   /*
   Form submit
-  
+
   Optionally execute model validations and perform a form submission.
    */
   submit: function(e) {
-    var promise;
+    var _this = this;
     if (e) {
       e.preventDefault();
     }
     if (Em.isNone(this.get('model.validate'))) {
       return this.get('targetObject').send(this.get('action'));
     } else {
-      promise = this.get('model').validate();
-      return promise.then((function(_this) {
-        return function() {
-          if (_this.get('model.isValid')) {
-            return _this.get('targetObject').send(_this.get('action'));
-          }
-        };
-      })(this));
+      return this.get('model').validate().then(function() {
+        if (_this.get('model.isValid')) {
+          return _this.get('targetObject').send(_this.get('action'));
+        }
+      });
     }
   }
 });
