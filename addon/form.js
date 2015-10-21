@@ -66,6 +66,9 @@ export default Em.Component.extend({
           if (_this.get('errorAction')) {
             _this.get('targetObject').send(_this.get('errorAction'));
           }
+        })
+        .finally(function() {
+          _this.$('input, select').blur();
         });
     }
   }
