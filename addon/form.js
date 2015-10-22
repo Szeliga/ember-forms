@@ -39,7 +39,7 @@ export default Em.Component.extend({
   //isInline: Utils.createBoundSwitchAccessor('inline', 'form_layout', 'form'),
   //isHorizontal: Utils.createBoundSwitchAccessor('horizontal', 'form_layout', 'form'),
   action: 'submit',
-  errorAction: 'validationError',
+  errorAction: null,
   model: void 0,
   form_layout: 'form',
   submit_button: true,
