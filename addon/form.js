@@ -56,6 +56,7 @@ export default Em.Component.extend({
       e.preventDefault();
     }
     if (Em.isNone(this.get('model.validate'))) {
+      _this.setInputErrors();
       return this.get('targetObject').send(this.get('action'));
     } else {
       return this.get('model').validate()
@@ -63,13 +64,15 @@ export default Em.Component.extend({
           _this.get('targetObject').send(_this.get('action'));
         })
         .catch(function() {
+          _this.setInputErrors();
           if (_this.get('errorAction')) {
             _this.get('targetObject').send(_this.get('errorAction'));
           }
-        })
-        .finally(function() {
-          _this.$('input, select').blur();
         });
     }
+  },
+
+  setInputErrors() {
+    this.$('input, select').blur();
   }
 });
